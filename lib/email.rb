@@ -1,7 +1,14 @@
 class Email
-  attr_reader :email
+  attr_reader :email, :type
+
   @@email_array = []
-  def initialize(attribute)
-    @email = attribute[:email]
+
+  def initialize(attributes)
+    @email = attributes[:email]
+    @type = attributes[:type]
+  end
+
+  def self.all
+    @@email_array
   end
 end
