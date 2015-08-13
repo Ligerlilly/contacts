@@ -18,4 +18,8 @@ class Number
     @@number_array.push(self)
   end
 
+  def self.clear
+    @@number_array = []
+  end
+
 end
