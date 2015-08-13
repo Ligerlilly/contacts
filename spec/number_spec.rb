@@ -27,8 +27,8 @@ describe(Number) do
     end
   end
 
-  describe('.all') do
-    it('returns and empty array') do
+  describe('.clear') do
+    it('clears array') do
       expect(Number.clear).to eq []
     end
   end
