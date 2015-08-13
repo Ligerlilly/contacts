@@ -14,6 +14,7 @@ describe "contacts path", { type: :feature } do
     expect(page).to have_content 'there, hi'
     click_link 'there, hi'
     expect(page).to have_content 'First name: hi Last name: there Job Title: you Company: guys'
+    click_link 'Add Contact Info'
     fill_in 'street', with: '1111 easy st'
     fill_in 'city', with: 'Portland'
     fill_in 'state', with: 'OR'
@@ -21,9 +22,9 @@ describe "contacts path", { type: :feature } do
     fill_in 'area_code', with: '555'
     fill_in 'first_half', with: '555'
     fill_in 'second_half', with: '5555'
-    fill_in 'email_address', with: 'andrew@gmail.com'
+    fill_in 'email', with: 'andrew@gmail.com'
     click_button 'Add Info'
-    expect(page).to have_content ''
+    expect(page).to have_content 'First name: hi Last name: there Job Title: you Company: guys Street: 1111 easy st City: Portland State: OR Zip: 97006 Email: andrew@gmail.com'
   end
 
 end

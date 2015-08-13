@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>Contacts</title>
+		<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+		<link rel='stylesheet' href='/css/main.css'>
+	</head>
+	<body>
+		<div class='container'>
+			<h1>Contacts</h1>
+
+<form action="/add_contact" method="post">
+  <div class='form-group'>
+    <label for="first_name">First Name:</label>
+    <input type="text" name="first_name" id="first_name" class='form-control'>
+
+    <label for="last_name">Last Name:</label>
+    <input type="text" name="last_name" id="last_name" class='form-control'>
+
+    <label for="job_title">Job Title:</label>
+    <input type="text" name="job_title" id="job_title" class='form-control'>
+
+    <label for="company">Company:</label>
+    <input type="text" name="company" id="company" class='form-control'>
+  </div>
+  <button class='btn btn-success'>Add Contact</button>
+</form>
+
+<h3>Contact List:</h3>
+<ul>
+    <a href="/contact/1"><li>there, hi</li></a>
+</ul>
+
+		</div>
+	</body>
+</html>

@@ -8,7 +8,7 @@ class Number
     @area_code = attributes[:area_code]
     @first_half = attributes[:first_half]
     @second_half = attributes[:second_half]
-    @id = @@number_array.length + 1
+    @id = attributes[:id]
   end
 
   def self.all

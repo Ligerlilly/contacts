@@ -3,7 +3,8 @@ require('rspec')
 
 describe(Number) do
   before do
-    @new_number = Number.new({area_code: "503", first_half: "555", second_half: "5555", type: "cell"})
+    Number.clear
+    @new_number = Number.new({area_code: "503", first_half: "555", second_half: "5555", type: "cell", id: 1})
   end
 
   describe('#initialize') do

@@ -2,37 +2,17 @@
 <h3>Last name: <%= @contact.last_name %></h3>
 <h3>Job Title: <%= @contact.job_title %></h3>
 <h3>Company: <%= @contact.company %></h3>
+<h3>Street: <%= @address.street if @address %></h3>
+<h3>City: <%= @address.city if @address %></h3>
+<h3>State: <%= @address.state if @address %></h3>
+<h3>Zip: <%= @address.zip if @address %></h3>
+<% if @number %>
+  <h3>Phone Number: <%= @number.area_code  %>-<%= @number.first_half %>-<%= @number.second_half %></h3>
+<% end %>
+<h3>Email: <%= @email.email if @email %></h3>
 
 
-
-<h3>Contact Info</h3>
-<form id="form_id" action="/contact_form" method="post">
-  <div class="form-group">
-    <input type="hidden" name="id" value="<%= @contact.id %>">
-
-    <label for="street">Street Address:</label>
-    <input type="text" name="street" id="street" class='form-control'>
-
-    <label for="city">City:</label>
-    <input type="text" name="city" id="city" class='form-control'>
-
-    <label for="state">State:</label>
-    <input type="text" name="state" id="state" class='form-control'>
-
-    <label for="zip_code">Zip Code:</label>
-    <input type="text" name="zip_code" id="zip_code" class='form-control'>
-
-    <label for="">Phone Number:</label>
-    <div class="row">
-      <div class="md-col-4">
-        <input type="text" name="area_code" id="area_code" class="phone"> -
-        <input type="text" name="first_half" id="first_half" class="phone"> -
-        <input type="text" name="second_half" id="second_half"  class="phone">
-      </div>
-    </div>
-
-    <label for="email_address">Email:</label>
-    <input type="text" name="email_address" id="email_address" class='form-control'>
-  </div>
-  <button class="btn btn-success" type="submit">Add Info</button>
-</form>
+<% unless @address %>
+  <a href="/contact/<%= @contact.id %>/contact_form">Add Contact Info</a>
+<% end %>
+<a href="/">Back to Contacts</a>

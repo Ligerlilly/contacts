@@ -4,7 +4,7 @@ require('rspec')
 describe Address do
   before do
     Address.clear
-    @new_address = Address.new({city: 'Detroit', state: 'Michigan', zip: '48219', street: '16745 Edinborough', type: 'home'})
+    @new_address = Address.new({city: 'Detroit', state: 'Michigan', zip: '48219', street: '16745 Edinborough', type: 'home', id: 1})
   end
 
 
@@ -41,6 +41,7 @@ describe Address do
     it('finds the address by ID number') do
       @new_address.save
       expect(Address.find(1)).to eq @new_address
+      Address.clear
     end
   end
 end

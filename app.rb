@@ -25,14 +25,22 @@ get('/contact/:id') do
   erb :contact
 end
 
+get('/contact/:id/contact_form') do
+  @contact = Contact.find(params['id'].to_i)
+  erb :contact_form
+end
+
 post('/contact_form') do
+
   @address = Address.new(params)
-  @phone = Number.new(params)
+  @number = Number.new(params)
   @email = Email.new(params)
+  @contact = Contact.find(params['id'].to_i)
 
-  @addess.save
-  @phone.save
-  @email.save
 
-  erb :contact
+  @address.save #unless Address.find(@address.id) == @address
+  @number.save #unless Number.find(@number.id) == @number
+  @email.save #unless Email.find(@email.id) == @email
+
+  redirect "/contact/#{@contact.id}"
 end
