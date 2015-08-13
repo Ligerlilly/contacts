@@ -16,4 +16,8 @@ class Address
   def save
     @@address_array.push(self)
   end
+
+  def self.clear
+    @@address_array = []
+  end
 end

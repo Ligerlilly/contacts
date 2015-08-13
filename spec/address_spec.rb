@@ -3,6 +3,7 @@ require('rspec')
 
 describe Address do
   before do
+    Address.clear
     @new_address = Address.new({city: 'Detroit', state: 'Michigan', zip: '48219', street: '16745 Edinborough'})
   end
 
@@ -19,6 +20,18 @@ describe Address do
   describe '.all' do
     it('initializes an emtpy array') do
       expect(Address.all).to eq []
+    end
+  end
+
+  describe '#save' do
+    it('returns array with self inside') do
+      expect(@new_address.save).to eq [@new_address]
+    end
+  end
+
+  describe '.clear' do
+    it('clears the address array') do
+      expect(Address.clear()).to eq []
     end
   end
 end
