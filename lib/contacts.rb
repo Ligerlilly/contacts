@@ -20,4 +20,6 @@ class Contact
     @@contact_array = []
   end
 
+  
+
 end
