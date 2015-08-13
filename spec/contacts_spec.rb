@@ -3,6 +3,7 @@ require('rspec')
 
 describe(Contact) do
   before do
+    Contact.clear
     @new_contact = Contact.new({first_name: 'Jason', last_name: 'Lane', job_title: 'Student', company: 'Epicodus'})
   end
 
@@ -24,6 +25,13 @@ describe(Contact) do
   describe('#save') do
     it('saves to contact_array') do
       expect(@new_contact.save).to eq [@new_contact]
+    end
+  end
+
+  describe('.clear') do
+    it('clears the contact_array') do
+      @new_contact.save
+      expect(Contact.clear).to eq []
     end
   end
 end

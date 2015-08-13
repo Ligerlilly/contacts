@@ -16,4 +16,8 @@ class Contact
     @@contact_array.push(self)
   end
 
+  def self.clear
+    @@contact_array = []
+  end
+
 end
