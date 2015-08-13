@@ -6,6 +6,7 @@ class Contact
     @last_name = attributes[:last_name]
     @job_title = attributes[:job_title]
     @company = attributes[:company]
+    @id = @@contact_array.length + 1
   end
 
   def self.all
@@ -20,6 +21,6 @@ class Contact
     @@contact_array = []
   end
 
-  
+
 
 end

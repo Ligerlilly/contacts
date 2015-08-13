@@ -34,4 +34,6 @@ describe(Contact) do
       expect(Contact.clear).to eq []
     end
   end
+
+
 end
