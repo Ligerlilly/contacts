@@ -11,4 +11,10 @@ describe(Number) do
       expect(@new_number.type).to eq "cell"
     end
   end
+
+  describe(".all") do
+    it('returns an empty array at first') do
+      expect(Number.all).to eq []
+    end
+  end
 end
