@@ -14,4 +14,8 @@ class Number
     @@number_array
   end
 
+  def save
+    @@number_array.push(self)
+  end
+
 end
