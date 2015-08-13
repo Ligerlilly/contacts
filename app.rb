@@ -7,12 +7,16 @@ require('./lib/email')
 require('./lib/number')
 
 get('/') do
-  erb(:index)
+  erb :index
 end
 
 post('/add_contact') do
   @contact = Contact.new(params)
   @contact.save
+  erb :index
+end
 
-  erb(:index)
+get('/contact/:id') do
+
+  erb :contact
 end

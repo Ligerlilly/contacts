@@ -20,6 +20,6 @@
 <h3>Contact List:</h3>
 <ul>
   <% Contact.all.each do |contact| %>
-    <a href="/contact"><li><%= contact.last_name %>, <%= contact.first_name %></li></a>
+    <a href="/contact/<%= contact.id %>"><li><%= contact.last_name %>, <%= contact.first_name %></li></a>
   <% end %>
 </ul>

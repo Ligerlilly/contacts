@@ -1,5 +1,5 @@
 class Contact
-  attr_reader(:first_name, :last_name, :job_title, :company)
+  attr_reader(:first_name, :last_name, :job_title, :company, :id)
   @@contact_array = []
   def initialize(attributes)
     @first_name = attributes[:first_name]
@@ -21,6 +21,15 @@ class Contact
     @@contact_array = []
   end
 
+  def self.find(id)
+    found_contact = nil
+    @@contact_array.each do |contact|
+      if contact.id == id
+        found_contact = contact
+      end
+    end
+    found_contact
+  end
 
 
 end

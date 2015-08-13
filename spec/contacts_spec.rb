@@ -13,6 +13,7 @@ describe(Contact) do
       expect(@new_contact.last_name).to eq 'Lane'
       expect(@new_contact.job_title).to eq 'Student'
       expect(@new_contact.company).to eq 'Epicodus'
+      expect(@new_contact.id).to eq 1
     end
   end
 
@@ -35,5 +36,11 @@ describe(Contact) do
     end
   end
 
+  describe('#find') do
+    it('finds contact by ID') do
+      @new_contact.save
+      expect(Contact.find(1)).to eq @new_contact
+    end
+  end
 
 end
