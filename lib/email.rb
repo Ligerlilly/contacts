@@ -15,4 +15,8 @@ class Email
   def save
     @@email_array.push(self)
   end
+
+  def self.clear
+    @@email_array = []
+  end
 end
