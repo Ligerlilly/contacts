@@ -4,7 +4,7 @@ require('rspec')
 describe Address do
   before do
     Address.clear
-    @new_address = Address.new({city: 'Detroit', state: 'Michigan', zip: '48219', street: '16745 Edinborough'})
+    @new_address = Address.new({city: 'Detroit', state: 'Michigan', zip: '48219', street: '16745 Edinborough', type: 'home'})
   end
 
 
@@ -14,6 +14,8 @@ describe Address do
       expect(@new_address.state).to eq "Michigan"
       expect(@new_address.zip).to eq "48219"
       expect(@new_address.street).to eq "16745 Edinborough"
+      expect(@new_address.type).to eq "home"
+
     end
   end
 

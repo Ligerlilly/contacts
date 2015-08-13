@@ -1,5 +1,5 @@
 class Address
-  attr_reader(:zip, :street, :state, :city)
+  attr_reader(:zip, :street, :state, :city, :type)
   @@address_array = []
 
   def initialize(attributes)
@@ -7,6 +7,7 @@ class Address
     @state = attributes[:state]
     @city = attributes[:city]
     @street = attributes[:street]
+    @type = attributes[:type]
   end
 
   def self.all
