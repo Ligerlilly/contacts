@@ -12,4 +12,8 @@ class Address
   def self.all
     @@address_array
   end
+
+  def save
+    @@address_array.push(self)
+  end
 end
