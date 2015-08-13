@@ -3,7 +3,7 @@ require('rspec')
 
 describe(Email) do
   before do
-    @new_email = Email.new({email: "andrew@gmail.com", type: 'home'})
+    @new_email = Email.new({email: "andrew@gmail.com", type: 'home', id: 1})
     Email.clear
   end
 
