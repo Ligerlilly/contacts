@@ -60,5 +60,17 @@ post '/update_form' do
   @number = Number.find(params['id'].to_i)
   @email = Email.find(params['id'].to_i)
   @contact.first_name = params['first_name']
+  @contact.last_name = params['last_name']
+  @contact.job_title = params['job_title']
+  @contact.company = params['company']
+  @address.street = params['street']
+  @address.city = params['city']
+  @address.state = params['state']
+  @address.zip = params['zip']
+  @number.area_code = params['area_code']
+  @number.first_half = params['first_half']
+  @number.second_half = params['second_half']
+  @email.email = params['email']
+
   redirect "/contact/#{@contact.id}"
 end

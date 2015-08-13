@@ -1,20 +1,21 @@
-<h3>First name: <%= @contact.first_name %></h3>
-<h3>Last name: <%= @contact.last_name %></h3>
-<h3>Job Title: <%= @contact.job_title %></h3>
-<h3>Company: <%= @contact.company %></h3>
-<h3>Street: <%= @address.street if @address %></h3>
-<h3>City: <%= @address.city if @address %></h3>
-<h3>State: <%= @address.state if @address %></h3>
-<h3>Zip: <%= @address.zip if @address %></h3>
+<h4>First name: <%= @contact.first_name %></h4>
+<h4>Last name: <%= @contact.last_name %></h4>
+<h4>Job Title: <%= @contact.job_title %></h4>
+<h4>Company: <%= @contact.company %></h4>
+<h4>Address:</h4>
+<%= @address.street if @address %>
+<p>
+  <%= @address.city if @address %>, <%= @address.state if @address %> <%= @address.zip if @address %>
+</p>
 <% if @number %>
-  <h3>Phone Number: <%= @number.area_code  %>-<%= @number.first_half %>-<%= @number.second_half %></h3>
+  <h4>Phone Number: (<%= @number.area_code  %>)<%= @number.first_half %>-<%= @number.second_half %></h4>
 <% end %>
-<h3>Email: <%= @email.email if @email %></h3>
+<h4>Email: <%= @email.email if @email %></h4>
 
 
 <% unless @address %>
   <a href="/contact/<%= @contact.id %>/contact_form">Add Contact Info</a>
 <% else %>
-  <a href="/contact/<%= @contact.id %>/update">Update Contact</a>
+  <a href="/contact/<%= @contact.id %>/update"><button class="btn">Update Contact</button></a>
 <% end %>
-<a href="/">Back to Contacts</a>
+<a href="/"><button class="btn">Back to Contacts</button></a>
