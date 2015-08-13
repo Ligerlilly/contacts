@@ -26,4 +26,10 @@ describe(Number) do
       expect(@new_number.save).to eq [@new_number]
     end
   end
+
+  describe('.all') do
+    it('returns and empty array') do
+      expect(Number.clear).to eq []
+    end
+  end
 end
