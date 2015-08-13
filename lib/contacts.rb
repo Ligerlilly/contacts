@@ -12,4 +12,8 @@ class Contact
     @@contact_array
   end
 
+  def save
+    @@contact_array.push(self)
+  end
+
 end

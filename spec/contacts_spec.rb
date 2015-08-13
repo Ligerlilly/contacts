@@ -20,4 +20,10 @@ describe(Contact) do
       expect(Contact.all()).to eq []
     end
   end
+
+  describe('#save') do
+    it('saves to contact_array') do
+      expect(@new_contact.save).to eq [@new_contact]
+    end
+  end
 end
