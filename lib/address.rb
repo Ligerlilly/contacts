@@ -1,5 +1,5 @@
 class Address
-  attr_reader(:zip, :street, :state, :city, :type, :id)
+  attr_accessor(:zip, :street, :state, :city, :type, :id)
   @@address_array = []
 
   def initialize(attributes)

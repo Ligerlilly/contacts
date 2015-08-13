@@ -1,5 +1,5 @@
 class Number
-  attr_reader :type, :area_code, :first_half, :second_half, :id
+  attr_accessor :type, :area_code, :first_half, :second_half, :id
 
   @@number_array = []
 
@@ -8,7 +8,7 @@ class Number
     @area_code = attributes[:area_code]
     @first_half = attributes[:first_half]
     @second_half = attributes[:second_half]
-    @id = attributes[:id]
+    @id = @@number_array.length + 1
   end
 
   def self.all

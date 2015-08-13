@@ -1,5 +1,5 @@
 class Email
-  attr_reader :email, :type, :id
+  attr_accessor :email, :type, :id
 
   @@email_array = []
 

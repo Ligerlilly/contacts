@@ -19,7 +19,7 @@ end
 get('/contact/:id') do
   @contact = Contact.find(params['id'].to_i)
   @address = Address.find(params['id'].to_i)
-  @phone = Number.find(params['id'].to_i)
+  @number = Number.find(params['id'].to_i)
   @email = Email.find(params['id'].to_i)
 
   erb :contact
@@ -42,5 +42,23 @@ post('/contact_form') do
   @number.save #unless Number.find(@number.id) == @number
   @email.save #unless Email.find(@email.id) == @email
 
+  redirect "/contact/#{@contact.id}"
+end
+
+get '/contact/:id/update' do
+  @contact = Contact.find(params['id'].to_i)
+  @address = Address.find(params['id'].to_i)
+  @number = Number.find(params['id'].to_i)
+  @email = Email.find(params['id'].to_i)
+
+  erb :update_form
+end
+
+post '/update_form' do
+  @contact = Contact.find(params['id'].to_i)
+  @address = Address.find(params['id'].to_i)
+  @number = Number.find(params['id'].to_i)
+  @email = Email.find(params['id'].to_i)
+  @contact.first_name = params['first_name']
   redirect "/contact/#{@contact.id}"
 end

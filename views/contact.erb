@@ -14,5 +14,7 @@
 
 <% unless @address %>
   <a href="/contact/<%= @contact.id %>/contact_form">Add Contact Info</a>
+<% else %>
+  <a href="/contact/<%= @contact.id %>/update">Update Contact</a>
 <% end %>
 <a href="/">Back to Contacts</a>

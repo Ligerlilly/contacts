@@ -24,7 +24,6 @@ describe "contacts path", { type: :feature } do
     fill_in 'second_half', with: '5555'
     fill_in 'email', with: 'andrew@gmail.com'
     click_button 'Add Info'
-    expect(page).to have_content 'First name: hi Last name: there Job Title: you Company: guys Street: 1111 easy st City: Portland State: OR Zip: 97006 Email: andrew@gmail.com'
+    expect(page).to have_content "First name: hi Last name: there Job Title: you Company: guys Street: 1111 easy st City: Portland State: OR Zip: 97006 Phone Number: 555-555-5555 Email: andrew@gmail.com Update Contact Back to Contacts"
   end
-
 end
