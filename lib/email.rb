@@ -11,4 +11,8 @@ class Email
   def self.all
     @@email_array
   end
+
+  def save
+    @@email_array.push(self)
+  end
 end
