@@ -1,5 +1,5 @@
 class Address
-  attr_reader(:zip, :street, :state, :city, :type)
+  attr_reader(:zip, :street, :state, :city, :type, :id)
   @@address_array = []
 
   def initialize(attributes)
@@ -8,6 +8,7 @@ class Address
     @city = attributes[:city]
     @street = attributes[:street]
     @type = attributes[:type]
+    @id = @@address_array.length + 1
   end
 
   def self.all
@@ -20,5 +21,15 @@ class Address
 
   def self.clear
     @@address_array = []
+  end
+
+  def self.find(id)
+    found_address = nil
+    @@address_array.each do |address|
+      if address.id == id
+        found_address = address
+      end
+    end
+    found_address
   end
 end

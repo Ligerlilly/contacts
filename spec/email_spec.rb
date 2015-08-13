@@ -6,7 +6,7 @@ describe(Email) do
     @new_email = Email.new({email: "andrew@gmail.com", type: 'home'})
     Email.clear
   end
-  
+
   describe('#initialize') do
     it('initializes email class and its attributes') do
       expect(@new_email.email).to eq "andrew@gmail.com"
@@ -29,6 +29,13 @@ describe(Email) do
   describe('.clear') do
     it('clears email_array and returns it') do
       expect(Email.clear).to eq []
+    end
+  end
+
+  describe('#find') do
+    it('finds contact by ID') do
+      @new_email.save
+      expect(Email.find(1)).to eq @new_email
     end
   end
 

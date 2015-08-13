@@ -1,11 +1,12 @@
 class Email
-  attr_reader :email, :type
+  attr_reader :email, :type, :id
 
   @@email_array = []
 
   def initialize(attributes)
     @email = attributes[:email]
     @type = attributes[:type]
+    @id = @@email_array.length + 1
   end
 
   def self.all
@@ -18,5 +19,15 @@ class Email
 
   def self.clear
     @@email_array = []
+  end
+
+  def self.find(id)
+    found_email = nil
+    @@email_array.each do |email|
+      if email.id == id
+        found_email = email
+      end
+    end
+    found_email
   end
 end

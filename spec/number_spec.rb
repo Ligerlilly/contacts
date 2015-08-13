@@ -32,4 +32,11 @@ describe(Number) do
       expect(Number.clear).to eq []
     end
   end
+
+  describe('#find') do
+    it('finds contact by ID') do
+      @new_number.save
+      expect(Number.find(1)).to eq @new_number
+    end
+  end
 end

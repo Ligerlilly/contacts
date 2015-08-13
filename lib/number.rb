@@ -1,5 +1,5 @@
 class Number
-  attr_reader :type, :area_code, :first_half, :second_half
+  attr_reader :type, :area_code, :first_half, :second_half, :id
 
   @@number_array = []
 
@@ -8,6 +8,7 @@ class Number
     @area_code = attributes[:area_code]
     @first_half = attributes[:first_half]
     @second_half = attributes[:second_half]
+    @id = @@number_array.length + 1
   end
 
   def self.all
@@ -20,6 +21,16 @@ class Number
 
   def self.clear
     @@number_array = []
+  end
+
+  def self.find(id)
+    found_number = nil
+    @@number_array.each do |number|
+      if number.id == id
+        found_number = number
+      end
+    end
+    found_number
   end
 
 end
